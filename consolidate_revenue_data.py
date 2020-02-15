@@ -26,16 +26,29 @@ part1.append(part4b)
 part1.append(part5)
 
 # Create a new dataset with total revenue
-
 total_revenue = pd.DataFrame(columns=['GEO.id', 'GEO.display-label', 'NAICS.id', 'NAICS.display-label', 'REVENUE', 'YEAR.id', 'ESTAB']);
 
 # Cycle through the data rows
 # start summation: RCPSZFE.id = 1
-# 100k to 250k: RCPSZFE.id = 123
-# 250k to 500k: RCPSZFE.id = 125
-# 500k to 1M: RCPSZFE.id = 131
-# 1M and over: RCPSZFE.id = 132
-
+# 100k to 250k: RCPSZFE.id = 123 (average = 125k)
+# 250k to 500k: RCPSZFE.id = 125 (average = 375k)
+# 500k to 1M: RCPSZFE.id = 131 (average = 750k)
+# 1M and over: RCPSZFE.id = 132 (1M)
+sum = 0
+for row in part1.iterrows():
+    if (row.RCPSZFE.id == 1):
+        # create new row
+        #current_row = 
+    elif (row.RCPSZFE.id == 123):
+        sum += 125
+    elif (row.RCPSZFE.id == 125):
+        sum += 375
+    elif (row.RCPSZFE.id == 131):
+        sum += 750
+    elif (row.RCPSZFE.id == 132):
+        sum += 1000
+    
+        
 
 
 

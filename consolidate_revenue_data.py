@@ -15,7 +15,7 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
 # Read data from file 'filename.csv' 
-filenames = glob('part*.csv')
+filenames = glob('Part*.csv')
 dataframes = [pd.read_csv(f) for f in filenames]
 metadata = pd.read_csv("Metadata.csv")
 

@@ -6,8 +6,13 @@ Created on Sat Feb 15 16:31:14 2020
 """
 import pandas as pd
 
-csv_names = ['total_revenue_part1.csv', 'CensusData/race.csv']
-dataframes = []
+rev = [pd.read_csv('total_revenue_part1.csv'), 
+                   pd.read_csv('total_revenue_part2.csv')]
+
+master = pd.concat(rev)
+
+csv_names = ['CensusData/aggregate_income.csv']
+dataframes = [master]
 
 for f in csv_names:
     dataframes.append(pd.read_csv(f))
@@ -19,5 +24,5 @@ for df in dataframes:
                           how='left', on='GEO.id', left_index=True, right_index=True)
     index+=1
 
-print('appended dataframe: \n'+str(dataframes[0].head()))
-dataframes[0].to_csv('appended.csv', encoding='utf-8', index=False)
+print('master dataframe: \n'+str(dataframes[0].head()))
+dataframes[0].to_csv('master.csv', encoding='utf-8', index=False)

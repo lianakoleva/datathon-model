@@ -22,6 +22,8 @@ part4a = pd.read_csv("Part 4a.csv")
 part4b = pd.read_csv("Part 4b.csv")
 part5 = pd.read_csv("Part 5.csv")
 
+
+
 # consolidate all the data into part1
 #part1.append(part2)
 #part1.append(part3)

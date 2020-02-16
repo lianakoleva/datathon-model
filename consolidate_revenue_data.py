@@ -19,6 +19,8 @@ filenames = glob('part*.csv')
 dataframes = [pd.read_csv(f) for f in filenames]
 metadata = pd.read_csv("Metadata.csv")
 
+
+
 # consolidate all the data into part1
 #part1.append(part2)
 #part1.append(part3)

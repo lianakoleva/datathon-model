@@ -8,19 +8,16 @@ Created on Fri Feb 14 20:13:07 2020
 
 # Load the Pandas libraries with alias 'pd' 
 import pandas as pd 
+from glob import glob 
 
 # pandas settings for printing
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 
 # Read data from file 'filename.csv' 
+filenames = glob('part*.csv')
+dataframes = [pd.read_csv(f) for f in filenames]
 metadata = pd.read_csv("Metadata.csv")
-part1 = pd.read_csv("Part 1.csv")
-part2 = pd.read_csv("Part 2.csv")
-part3 = pd.read_csv("Part 3.csv")
-part4a = pd.read_csv("Part 4a.csv")
-part4b = pd.read_csv("Part 4b.csv")
-part5 = pd.read_csv("Part 5.csv")
 
 # consolidate all the data into part1
 #part1.append(part2)

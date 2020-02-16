@@ -95,8 +95,12 @@ def processData3():
     
     #drop the column of 2012s
     master = master.drop('YEAR.id', axis=1);    
+    master = master.dropna()
     master.to_csv(givenDataMasterMerged, encoding='utf-8', index=False)
     
     return 0
 
+#Depending on what csv files have already been generated, call the functions below
+#processData1()
+#processData2()
 processData3()
